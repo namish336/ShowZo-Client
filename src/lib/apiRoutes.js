@@ -5,6 +5,7 @@ const apiRoutes = {
     favorites: "/api/favorites",
     collections: "/api/collections",
     bookings: "/api/bookings",
+    payments: "/api/payments",
 };
 
 export default apiRoutes;

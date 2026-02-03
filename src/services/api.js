@@ -2,7 +2,7 @@ import axios from "axios";
 import apiRoutes from "../lib/apiRoutes";
 
 const api = axios.create({
-    baseURL:  import.meta.env.VITE_API_BASE_URL,
+    baseURL: import.meta.env.VITE_API_BASE_URL,
 });
 
 export const getMovies = async (params) => {
@@ -196,7 +196,7 @@ export const getCollections = async (token) => {
 
 export const addMovieToCollection = async (collectionId, movieId, token) => {
     try {
-        const response = await api.post("/collections/add", { collectionId, movieId }, {
+        const response = await api.post(`${apiRoutes.collections}/add`, { collectionId, movieId }, {
             headers: { Authorization: `Bearer ${token}` }
         });
         return response.data;
@@ -208,7 +208,7 @@ export const addMovieToCollection = async (collectionId, movieId, token) => {
 
 export const removeMovieFromCollection = async (collectionId, movieId, token) => {
     try {
-        const response = await api.delete(`/collections/${collectionId}/movie/${movieId}`, {
+        const response = await api.delete(`${apiRoutes.collections}/${collectionId}/movie/${movieId}`, {
             headers: { Authorization: `Bearer ${token}` }
         });
         return response.data;
@@ -220,7 +220,7 @@ export const removeMovieFromCollection = async (collectionId, movieId, token) =>
 
 export const deleteCollection = async (collectionId, token) => {
     try {
-        const response = await api.delete(`/collections/${collectionId}`, {
+        const response = await api.delete(`${apiRoutes.collections}/${collectionId}`, {
             headers: { Authorization: `Bearer ${token}` }
         });
         return response.data;
@@ -232,7 +232,7 @@ export const deleteCollection = async (collectionId, token) => {
 
 export const createPaymentIntent = async (bookingId, token) => {
     try {
-        const response = await api.post("/payments/create-payment-intent", { bookingId }, {
+        const response = await api.post(`${apiRoutes.payments}/create-payment-intent`, { bookingId }, {
             headers: { Authorization: `Bearer ${token}` }
         });
         return response.data;
@@ -244,7 +244,7 @@ export const createPaymentIntent = async (bookingId, token) => {
 
 export const confirmPayment = async (bookingId, paymentIntentId, token) => {
     try {
-        const response = await api.post("/payments/confirm-payment", { bookingId, paymentIntentId }, {
+        const response = await api.post(`${apiRoutes.payments}/confirm-payment`, { bookingId, paymentIntentId }, {
             headers: { Authorization: `Bearer ${token}` }
         });
         return response.data;
@@ -257,7 +257,8 @@ export const confirmPayment = async (bookingId, paymentIntentId, token) => {
 export const getOccupiedSeats = async (showtimeId) => {
     try {
         // No auth required for checking seats usually, or public? allow public content
-        const response = await api.get(`/bookings/occupied/${showtimeId}`);
+        // No auth required for checking seats usually, or public? allow public content
+        const response = await api.get(`${apiRoutes.bookings}/occupied/${showtimeId}`);
         return response.data.occupiedSeats;
     } catch (error) {
         console.error("Error fetching occupied seats:", error);
