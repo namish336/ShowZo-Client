@@ -1,0 +1,27 @@
+
+> client@0.0.0 build
+> vite build
+
+vite v7.3.0 building client environment for production...
+transforming...
+✓ 1866 modules transformed.
+✗ Build failed in 13.58s
+error during build:
+src/pages/admin/Dashboard.jsx (1:99): "CalendarKeywordsIcon" is not exported by "node_modules/lucide-react/dist/esm/lucide-react.js", imported by "src/pages/admin/Dashboard.jsx".
+file: /home/namish/ShowZo/client/src/pages/admin/Dashboard.jsx:1:99
+
+1: import { ChartLineIcon, CircleDollarSignIcon, PlayCircleIcon, StarIcon, UsersIcon, TrendingUpIcon, CalendarKeywordsIc...
+                                                                                                      ^
+2: import React, { useState } from 'react'
+3: import { dummyDashboardData } from '../../assets/assets';
+
+    at getRollupError (file:///home/namish/ShowZo/client/node_modules/rollup/dist/es/shared/parseAst.js:401:41)
+    at error (file:///home/namish/ShowZo/client/node_modules/rollup/dist/es/shared/parseAst.js:397:42)
+    at Module.error (file:///home/namish/ShowZo/client/node_modules/rollup/dist/es/shared/node-entry.js:17022:16)
+    at Module.traceVariable (file:///home/namish/ShowZo/client/node_modules/rollup/dist/es/shared/node-entry.js:17478:29)
+    at ModuleScope.findVariable (file:///home/namish/ShowZo/client/node_modules/rollup/dist/es/shared/node-entry.js:15141:39)
+    at ReturnValueScope.findVariable (file:///home/namish/ShowZo/client/node_modules/rollup/dist/es/shared/node-entry.js:5688:38)
+    at FunctionBodyScope.findVariable (file:///home/namish/ShowZo/client/node_modules/rollup/dist/es/shared/node-entry.js:5688:38)
+    at Identifier.bind (file:///home/namish/ShowZo/client/node_modules/rollup/dist/es/shared/node-entry.js:5462:40)
+    at CallExpression.bind (file:///home/namish/ShowZo/client/node_modules/rollup/dist/es/shared/node-entry.js:2825:28)
+    at CallExpression.bind (file:///home/namish/ShowZo/client/node_modules/rollup/dist/es/shared/node-entry.js:12172:15)

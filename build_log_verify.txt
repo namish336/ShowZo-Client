@@ -1,0 +1,18 @@
+
+> client@0.0.0 build
+> vite build
+
+vite v7.3.0 building client environment for production...
+transforming...
+✓ 1866 modules transformed.
+rendering chunks...
+computing gzip size...
+dist/index.html                        0.48 kB │ gzip:   0.31 kB
+dist/assets/marvelLogo-D8RR2dX4.svg    5.76 kB │ gzip:   1.88 kB
+dist/assets/googlePlay-kU7Pxons.svg    8.09 kB │ gzip:   2.83 kB
+dist/assets/profile-CXhnMaZT.png      12.41 kB
+dist/assets/appStore-DcWbZdwm.svg     15.48 kB │ gzip:   6.22 kB
+dist/assets/logo-CWxA8uPL.svg        621.11 kB │ gzip: 620.70 kB
+dist/assets/index-CE6xXpoD.css        55.23 kB │ gzip:   9.29 kB
+dist/assets/index-Cy62rYUD.js        443.13 kB │ gzip: 137.95 kB
+✓ built in 8.44s
