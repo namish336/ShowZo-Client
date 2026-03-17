@@ -1,4 +1,5 @@
 import { assets } from "../assets/assets";
+import { Link } from "react-router-dom";
 
 const Footer = () => {
   return (
@@ -7,9 +8,9 @@ const Footer = () => {
         <div className="md:max-w-96">
           <img className="w-36 h-auto" src={assets.logo} alt="logo" />
           <p className="mt-6 text-sm">
-            ShowZo  booking website is an online platform that allows users to browse showtimes for various movies at local theaters, 
-            select seats, and purchase tickets securely in advance. It offers convenience, real-time availability, 
-            and typically provides features like theater location finders and film details 
+            ShowZo  booking website is an online platform that allows users to browse showtimes for various movies at local theaters,
+            select seats, and purchase tickets securely in advance. It offers convenience, real-time availability,
+            and typically provides features like theater location finders and film details
           </p>
           {/*<div className="flex items-center gap-2 mt-4">
             <img
@@ -28,21 +29,21 @@ const Footer = () => {
                 <a href="#">Home</a>
               </li>
               <li>
-                <a href="#">About us</a>
+                <Link to="/about" className="hover:text-white transition-colors">About us</Link>
               </li>
               <li>
-                <a href="#">Contact us</a>
+                <Link to="/contact" className="hover:text-white transition-colors">Contact us</Link>
               </li>
               <li>
-                <a href="#">Privacy policy</a>
+                <Link to="/privacy" className="hover:text-white transition-colors">Privacy policy</Link>
               </li>
             </ul>
           </div>
           <div>
             <h2 className="font-semibold mb-5">Get in touch</h2>
             <div className="text-sm space-y-2">
-              <p>9418269835</p>
-              <p>mafia@gmail.com</p>
+              <p>9015353043</p>
+              <p>showzo@gmail.com</p>
             </div>
           </div>
         </div>

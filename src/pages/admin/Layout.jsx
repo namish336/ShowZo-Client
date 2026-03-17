@@ -9,6 +9,8 @@ const Layout = () => {
   const { user, isLoaded, isSignedIn } = useUser();
   const navigate = useNavigate();
 
+  const [isSidebarOpen, setIsSidebarOpen] = React.useState(false);
+
   useEffect(() => {
     if (isLoaded) {
       if (!isSignedIn) {
@@ -38,15 +40,13 @@ const Layout = () => {
         <div className="absolute bottom-[-20%] right-[-10%] w-[50%] h-[50%] bg-purple-900/20 blur-[150px] rounded-full mix-blend-screen" />
       </div>
 
-      <AdminNavbar />
+      <AdminNavbar isSidebarOpen={isSidebarOpen} setIsSidebarOpen={setIsSidebarOpen} />
 
       <div className="flex h-[calc(100vh-64px)] pt-4 relative z-10">
-        <AdminSidebar />
+        <AdminSidebar isSidebarOpen={isSidebarOpen} setIsSidebarOpen={setIsSidebarOpen} />
 
-        <main className="flex-1 px-6 py-6 overflow-y-auto no-scrollbar">
-          <div className="max-w-7xl mx-auto pb-10">
-            <Outlet />
-          </div>
+        <main className="flex-1 px-4 md:px-6 py-4 md:py-6 overflow-y-auto no-scrollbar">
+          <Outlet />
         </main>
       </div>
     </div>

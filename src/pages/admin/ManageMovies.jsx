@@ -98,14 +98,7 @@ const ManageMovies = () => {
                                 className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110"
                             />
 
-                            {/* Gradient Overlay */}
-                            <div className="absolute inset-0 bg-gradient-to-t from-black/90 via-black/20 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex flex-col justify-end p-4">
-                                <div className="space-y-2 transform translate-y-4 group-hover:translate-y-0 transition-transform duration-300">
-                                    <button className="flex items-center justify-center gap-2 w-full bg-primary hover:bg-primary-dull text-white py-2 rounded-lg font-medium text-sm transition-colors cursor-pointer">
-                                        <EditIcon className="w-4 h-4" /> Edit Details
-                                    </button>
-                                </div>
-                            </div>
+
 
                             {/* Badges */}
                             <div className="absolute top-2 left-2 flex gap-1">
@@ -135,8 +128,8 @@ const ManageMovies = () => {
                                 <button
                                     onClick={() => handleToggle(movie._id, 'isNowShowing', movie.isNowShowing)}
                                     className={`flex flex-col items-center justify-center p-2 rounded-xl border transition-all ${movie.isNowShowing
-                                            ? "bg-primary/10 border-primary/30 text-primary"
-                                            : "bg-white/5 border-white/5 text-gray-400 hover:bg-white/10"
+                                        ? "bg-primary/10 border-primary/30 text-primary"
+                                        : "bg-white/5 border-white/5 text-gray-400 hover:bg-white/10"
                                         }`}
                                 >
                                     {movie.isNowShowing ? <EyeIcon className="w-5 h-5 mb-1" /> : <EyeOffIcon className="w-5 h-5 mb-1" />}
@@ -146,8 +139,8 @@ const ManageMovies = () => {
                                 <button
                                     onClick={() => handleToggle(movie._id, 'showOnHome', movie.showOnHome)}
                                     className={`flex flex-col items-center justify-center p-2 rounded-xl border transition-all ${movie.showOnHome
-                                            ? "bg-purple-500/10 border-purple-500/30 text-purple-400"
-                                            : "bg-white/5 border-white/5 text-gray-400 hover:bg-white/10"
+                                        ? "bg-purple-500/10 border-purple-500/30 text-purple-400"
+                                        : "bg-white/5 border-white/5 text-gray-400 hover:bg-white/10"
                                         }`}
                                 >
                                     {movie.showOnHome ? <HomeIcon className="w-5 h-5 mb-1" /> : <HomeIcon className="w-5 h-5 mb-1 opacity-50" />}

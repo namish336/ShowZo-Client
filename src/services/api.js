@@ -268,7 +268,7 @@ export const getOccupiedSeats = async (showtimeId) => {
 
 export const getDashboardStats = async (token) => {
     try {
-        const response = await api.get("/dashboard/stats", {
+        const response = await api.get(`${apiRoutes.dashboard}/stats`, {
             headers: { Authorization: `Bearer ${token}` }
         });
         return response.data;

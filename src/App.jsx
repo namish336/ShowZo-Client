@@ -24,6 +24,9 @@ import NewsDetail from './pages/NewsDetail'
 import Theaters from './pages/Theaters'
 import TheaterShows from './pages/TheaterShows'
 import BookingPayment from './pages/BookingPayment'
+import AboutUs from './pages/AboutUs'
+import PrivacyPolicy from './pages/PrivacyPolicy'
+import ContactUs from './pages/ContactUs'
 
 
 const App = () => {
@@ -47,6 +50,9 @@ const App = () => {
         <Route path="/theaters/:id/shows" element={<TheaterShows />} />
         <Route path="/movie/:id" element={<Details />} />
         <Route path="/news" element={<News />} />
+        <Route path="/about" element={<AboutUs />} />
+        <Route path="/privacy" element={<PrivacyPolicy />} />
+        <Route path="/contact" element={<ContactUs />} />
         <Route path="/news/:id" element={<NewsDetail />} />
 
         <Route path='/admin/*' element={<Layout />}>
