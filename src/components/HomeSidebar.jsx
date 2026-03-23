@@ -52,9 +52,9 @@ const HomeSidebar = () => {
         <div className="flex items-center justify-between text-gray-900">
           <div className="flex items-center gap-2">
             <Flame className="w-5 h-5 text-orange-500" />
-            <span className="font-semibold text-sm">New Trailer</span>
+            <span className="font-semibold text-sm">Trailers</span>
           </div>
-          <span className="text-xs text-gray-500 cursor-pointer hover:text-gray-900">Sort by Today ↑↓</span>
+          <span className="text-xs text-gray-500 cursor-pointer hover:text-gray-900"></span>
         </div>
 
         <div className="flex flex-col gap-4">
