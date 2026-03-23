@@ -54,7 +54,7 @@ const MyBookings = () => {
 
 
   return !isLoading ? (
-    <div className="relative px-6 md:px-16 lg:px-40 pt-30 md:pt-40 min-h-[80vh]">
+    <div className="relative px-6 md:px-16 lg:px-40 pt-30 md:pt-40 min-h-screen bg-[#C0C9DB] text-gray-900 pb-20">
       <BlurCircle top="100px" left="100px" />
       <div>
         <BlurCircle bottom="0px" left="600px" />
@@ -62,17 +62,17 @@ const MyBookings = () => {
       <h1 className="text-lg font-semibold mb-4">My Bookings</h1>
 
       {bookings.filter(item => item && item.showtime && item.showtime.movie).map((item, index) => (
-        <div key={index} className="flex flex-col md:flex-row justify-between bg-primary/8 border border-primary/20 rounded-lg mt-4 p-2 max-w-3xl">
+        <div key={index} className="flex flex-col md:flex-row justify-between bg-white/50 backdrop-blur-md border border-white/40 shadow-sm rounded-2xl mt-4 p-2 max-w-3xl">
           <div className="flex flex-col md:flex-row">
             <img src={getImageUrl(item.showtime.movie.poster_path)}
               alt=""
               className="md:max-w-45 aspect-video h-auto object-cover object-bottom rounded" />
             <div className="flex flex-col p-4">
               <p className="text-lg font-semibold">{item.showtime.movie.title}</p>
-              <p className="text-gray-400 text-sm">
+              <p className="text-gray-700 font-medium text-sm">
                 {timeFormat(item.showtime.movie.runtime)}
               </p>
-              <p className="text-gray-400 text-sm mt-auto">
+              <p className="text-gray-700 font-medium text-sm mt-auto">
                 {item.showtime.theater ? item.showtime.theater.name : 'Theater info unavailable'} | {dateFormat(item.showtime.showTime)}
               </p>
             </div>
@@ -93,7 +93,7 @@ const MyBookings = () => {
               <div className="flex gap-2 mb-3">
                 <button
                   onClick={() => navigate(`/booking/payment/${item._id}`)}
-                  className="bg-primary hover:bg-primary-dull px-6 py-2 text-sm rounded-full font-medium transition-all active:scale-95 shadow-lg shadow-primary/25"
+                  className="bg-primary hover:bg-primary-dull text-white px-6 py-2 text-sm rounded-full font-bold transition-all active:scale-95 shadow-md"
                 >
                   Pay Now
                 </button>
@@ -105,13 +105,13 @@ const MyBookings = () => {
                 </button>
               </div>
             )}
-            <div className="text-sm">
+            <div className="text-sm font-medium mt-2">
               <p>
-                <span className="text-gray-400">Total Tickets:</span>{" "}
+                <span className="text-gray-600">Total Tickets:</span>{" "}
                 {item.seats.length}
               </p>
               <p>
-                <span className="text-gray-400">Seat Number:</span>{" "}
+                <span className="text-gray-600">Seat Number:</span>{" "}
                 {item.seats.join(", ")}
               </p>
             </div>

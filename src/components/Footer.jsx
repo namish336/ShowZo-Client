@@ -3,30 +3,21 @@ import { Link } from "react-router-dom";
 
 const Footer = () => {
   return (
-    <footer className="px-6 md:px-16 lg:px-36 mt-40 w-full text-gray-300">
-      <div className="flex flex-col md:flex-row justify-between w-full gap-10 border-b border-gray-500 pb-14">
+    <footer className="px-6 md:px-16 lg:px-36 pt-20 w-full bg-gray-900 text-gray-400 font-medium">
+      <div className="flex flex-col md:flex-row justify-between w-full gap-10 border-b border-gray-700 pb-14">
         <div className="md:max-w-96">
           <img className="w-36 h-auto" src={assets.logo} alt="logo" />
-          <p className="mt-6 text-sm">
-            ShowZo  booking website is an online platform that allows users to browse showtimes for various movies at local theaters,
-            select seats, and purchase tickets securely in advance. It offers convenience, real-time availability,
-            and typically provides features like theater location finders and film details
+          <p className="mt-6 text-sm leading-relaxed">
+            ShowZo website is an online platform that is designed to make your movie experience seamless and enjoyable.
+             Whether you're looking to book tickets, explore trending films, or discover old ones, create collections, we’ve got you covered.
           </p>
-          {/*<div className="flex items-center gap-2 mt-4">
-            <img
-              src={assets.googlePlay}
-              alt="google play"
-              className="h-9 w-auto"
-            />
-            <img src={assets.appStore} alt="app store" className="h-9 w-auto" />
-          </div> */}
         </div>
         <div className="flex-1 flex items-start md:justify-end gap-20 md:gap-40">
           <div>
-            <h2 className="font-semibold mb-5">SAN Corporation</h2>
-            <ul className="text-sm space-y-2">
+            <h2 className="font-bold text-gray-200 mb-5 uppercase tracking-wider text-sm">SAN Corporation</h2>
+            <ul className="text-sm space-y-3">
               <li>
-                <a href="#">Home</a>
+                <a href="#" className="hover:text-white transition-colors">Home</a>
               </li>
               <li>
                 <Link to="/about" className="hover:text-white transition-colors">About us</Link>
@@ -40,15 +31,15 @@ const Footer = () => {
             </ul>
           </div>
           <div>
-            <h2 className="font-semibold mb-5">Get in touch</h2>
-            <div className="text-sm space-y-2">
+            <h2 className="font-bold text-gray-200 mb-5 uppercase tracking-wider text-sm">Get in touch</h2>
+            <div className="text-sm space-y-3">
               <p>9015353043</p>
               <p>showzo@gmail.com</p>
             </div>
           </div>
         </div>
       </div>
-      <p className="pt-4 text-center text-sm pb-5">
+      <p className="pt-6 text-center text-sm pb-6 text-gray-500">
         Copyright {new Date().getFullYear()} © All Right Reserved.
       </p>
     </footer>

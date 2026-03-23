@@ -3,12 +3,15 @@ import { useSearchParams, useNavigate } from "react-router-dom";
 import axios from "axios";
 import AddToCollectionModal from "../components/AddToCollectionModal";
 import { PlusIcon } from "lucide-react";
+import { useAuth } from "@clerk/clerk-react";
+import toast from "react-hot-toast";
 
 const API_KEY = "7bfbdb37"; // replace this
 
 const SearchResults = () => {
   const [searchParams] = useSearchParams();
   const query = searchParams.get("query");
+  const { isSignedIn } = useAuth();
 
   const [movies, setMovies] = useState([]);
   const [loading, setLoading] = useState(false);
@@ -46,7 +49,7 @@ const SearchResults = () => {
   }, [query]);
 
   return (
-    <div className="min-h-screen pt-28 px-6 md:px-16 lg:px-32 bg-black text-white">
+    <div className="min-h-screen pt-28 px-6 md:px-16 lg:px-32 bg-[#C0C9DB] text-gray-900">
 
       {/* Heading */}
       <h1 className="text-3xl font-bold mb-8">
@@ -63,7 +66,7 @@ const SearchResults = () => {
 
       {/* No Results */}
       {!loading && movies.length === 0 && (
-        <p className="text-gray-400 text-lg">No movies found.</p>
+        <p className="text-gray-600 font-medium text-lg">No movies found.</p>
       )}
 
       {/* Movies Grid */}
@@ -93,20 +96,24 @@ const SearchResults = () => {
               <button
                 onClick={(e) => {
                   e.stopPropagation();
-                  setSelectedMovieId(movie.imdbID);
+                  if (!isSignedIn) {
+                    toast.error("Please login to continue");
+                  } else {
+                    setSelectedMovieId(movie.imdbID);
+                  }
                 }}
-                className="absolute top-2 right-2 bg-black/60 hover:bg-primary text-white p-2 rounded-full opacity-0 group-hover:opacity-100 transition backdrop-blur-md"
+                className="absolute top-2 right-2 bg-white/60 hover:bg-primary text-gray-900 hover:text-white p-2 rounded-full opacity-0 group-hover:opacity-100 transition backdrop-blur-md shadow-sm"
                 title="Add to Collection"
               >
                 <PlusIcon className="w-4 h-4" />
               </button>
             </div>
 
-            <h2 className="mt-3 font-semibold text-sm line-clamp-2">
+            <h2 className="mt-3 font-bold text-sm line-clamp-2 text-gray-900">
               {movie.Title}
             </h2>
 
-            <p className="text-gray-400 text-sm">
+            <p className="text-gray-700 font-medium text-sm">
               {movie.Year}
             </p>
           </div>

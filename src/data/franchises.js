@@ -8,14 +8,46 @@ export const franchises = [
       "Captain America: The First Avenger",
       "Captain Marvel",
       "Iron Man",
-      "The Incredible Hulk",
       "Iron Man 2",
+      "The Incredible Hulk",
       "Thor",
       "The Avengers",
-       "Iron Man 3",
+      "Thor: The Dark World",
+      "Iron Man 3",
+      "Captain America: The Winter Soldier",
+      "Guardians of the Galaxy",
+      "Guardians of the Galaxy Vol. 2",
       "Avengers: Age of Ultron",
+      "Ant-Man",
+      "Captain America: Civil War",
+      "Black Widow",
+      "Black Panther",
+      "Spider-Man: Homecoming",
+      "Doctor Strange",
+      "Thor: Ragnarok",
+      "Ant-Man and the Wasp",
       "Avengers: Infinity War",
-      "Avengers: Endgame"
+      "Avengers: Endgame",
+      "Loki (Season 1)",
+      "What If...? (Season 1)",
+      "WandaVision",
+      "The Falcon and the Winter Soldier",
+      "Shang-Chi and the Legend of the Ten Rings",
+      "Eternals",
+      "Spider-Man: Far From Home",
+      "Spider-Man: No Way Home",
+      "Hawkeye",
+      "Moon Knight",
+      "Doctor Strange in the Multiverse of Madness",
+      "Ms. Marvel",
+      "Thor: Love and Thunder",
+      "She-Hulk: Attorney at Law",
+      "Black Panther: Wakanda Forever",
+      "Ant-Man and the Wasp: Quantumania",
+      "Guardians of the Galaxy Vol. 3",
+      "Secret Invasion",
+      "The Marvels",
+      "Loki (Season 2)"
     ]
   },
   {
@@ -144,5 +176,128 @@ export const franchises = [
     "Deadpool 2",
     "Logan"
   ]
-},
+  },
+  {
+    id: 9,
+    name: "Wizarding World",
+    image: "https://m.media-amazon.com/images/S/stores-image-uploads-eu-prod/9/AmazonStores/A21TJRUUN4KGV/6671abed2b721b3ef05984d642a06831.w1280.h618.jpg",
+    description: "The magical world of Harry Potter and Fantastic Beasts.",
+    watchOrder: [
+      "Fantastic Beasts and Where to Find Them",
+      "Fantastic Beasts: The Crimes of Grindelwald",
+      "Fantastic Beasts: The Secrets of Dumbledore",
+      "Harry Potter and the Sorcerer's Stone",
+      "Harry Potter and the Chamber of Secrets",
+      "Harry Potter and the Prisoner of Azkaban",
+      "Harry Potter and the Goblet of Fire",
+      "Harry Potter and the Order of the Phoenix",
+      "Harry Potter and the Half-Blood Prince",
+      "Harry Potter and the Deathly Hallows – Part 1",
+      "Harry Potter and the Deathly Hallows – Part 2"
+    ]
+  },
+  {
+    id: 10,
+    name: "Fast & Furious",
+    image: "https://beam-images.warnermediacdn.com/BEAM_LWM_DELIVERABLES/87dba8e5-aade-4d6b-af2b-917471ba6b43/4a88f265-a6e4-45a5-92ff-7d6617d1920b?host=wbd-images.prod-vod.h264.io&partner=beamcom",
+    description: "High-octane action and family valhttps://images.unsplash.com/photo-1620070434475-430263435c2b?q=80&w=2070&auto=format&fit=croues.",
+    watchOrder: [
+      "The Fast and the Furious",
+      "2 Fast 2 Furious",
+      "The Fast and the Furious: Tokyo Drift",
+      "Fast & Furious",
+      "Fast Five",
+      "Fast & Furious 6",
+      "Furious 7",
+      "The Fate of the Furious",
+      "Fast & Furious Presents: Hobbs & Shaw",
+      "F9",
+      "Fast X"
+    ]
+  },
+  {
+    id: 11,
+    name: "Mission: Impossible",
+    image: "https://photos.tf1.fr/330/186/program-card-landscape-d4b34a-a2cbd8-0@3x.jpg",
+    description: "Ethan Hunt's impossible missions across the globe.",
+    watchOrder: [
+      "Mission: Impossible",
+      "Mission: Impossible 2",
+      "Mission: Impossible III",
+      "Mission: Impossible – Ghost Protocol",
+      "Mission: Impossible – Rogue Nation",
+      "Mission: Impossible – Fallout",
+      "Mission: Impossible – Dead Reckoning Part One"
+    ]
+  },
+  {
+    id: 12,
+    name: "James Bond (Daniel Craig)",
+    image: "https://townsquare.media/site/295/files/2020/11/Daniel-Craig-James-Bond.jpg?w=780&q=75",
+    description: "The modern era of 007's espionage.",
+    watchOrder: [
+      "Casino Royale",
+      "Quantum of Solace",
+      "Skyfall",
+      "Spectre",
+      "No Time to Die"
+    ]
+  },
+  {
+    id: 13,
+    name: "Middle-earth",
+    image: "https://storage.googleapis.com/mee_site/images/films/c_mpt.png",
+    description: "The epic journey of Bilbo and Frodo Baggins.",
+    watchOrder: [
+      "The Hobbit: An Unexpected Journey",
+      "The Hobbit: The Desolation of Smaug",
+      "The Hobbit: The Battle of the Five Armies",
+      "The Lord of the Rings: The Fellowship of the Ring",
+      "The Lord of the Rings: The Two Towers",
+      "The Lord of the Rings: The Return of the King"
+    ]
+  },
+  {
+    id: 14,
+    name: "John Wick",
+    image: "https://static.beebom.com/wp-content/uploads/2026/02/John-Wick-game-cover-1.jpg?w=1168&quality=75",
+    description: "The Boogeyman's quest for revenge and redemption.",
+    watchOrder: [
+      "John Wick",
+      "John Wick: Chapter 2",
+      "John Wick: Chapter 3 – Parabellum",
+      "John Wick: Chapter 4"
+    ]
+  },
+  {
+    id: 15,
+    name: "Sony's Spider-Man Universe",
+    image: "https://static0.srcdn.com/wordpress/wp-content/uploads/2020/04/Spider-Man-with-Venom-and-Morbius.jpg",
+    description: "The cinematic universe of Spider-Man's greatest foes.",
+    watchOrder: [
+      "Spiderman",
+      "Spiderman 2",
+      "Spiderman 3",
+      "The Amazing Spiderman",
+      "The Amazing Spiderman 2",
+      "Venom",
+      "Venom: Let There Be Carnage",
+      "Morbius",
+      "Madame Web",
+      "Venom: The Last Dance",
+      "Kraven the Hunter"
+    ]
+  },
+  {
+    id: 16,
+    name: "Sonic the Hedgehog",
+    image: "https://cdn.mos.cms.futurecdn.net/ZZYo2LccYK9m4KSiuSPzQi.jpg",
+    description: "The adventures of the world's fastest hedgehog.",
+    watchOrder: [
+      "Sonic the Hedgehog",
+      "Sonic the Hedgehog 2",
+      "Knuckles (Mini-Series)",
+      "Sonic the Hedgehog 3"
+    ]
+  }
 ];

@@ -3,7 +3,7 @@ import Title from '../../components/admin/Title';
 import Loading from '../../components/Loading';
 import { getMovies, updateMovie } from '../../services/api';
 import { getImageUrl } from '../../lib/imageUtils';
-import { SearchIcon, EyeIcon, EyeOffIcon, CalendarIcon, StarIcon, HomeIcon, EditIcon, CheckCircle2Icon } from 'lucide-react';
+import { SearchIcon, EyeIcon, EyeOffIcon, CalendarIcon, StarIcon, HomeIcon, EditIcon, CheckCircle2Icon, ZapIcon } from 'lucide-react';
 import toast from 'react-hot-toast';
 
 const ManageMovies = () => {
@@ -107,6 +107,11 @@ const ManageMovies = () => {
                                         <div className="w-1.5 h-1.5 rounded-full bg-green-500 animate-pulse"></div> Now Showing
                                     </span>
                                 )}
+                                {movie.isHero && (
+                                    <span className="bg-amber-500/20 backdrop-blur-md border border-amber-500/30 text-amber-400 text-[10px] font-bold px-2 py-0.5 rounded-full uppercase tracking-wider flex items-center gap-1">
+                                        <ZapIcon className="w-2.5 h-2.5 fill-amber-500" /> Carousel
+                                    </span>
+                                )}
                             </div>
                             <div className="absolute top-2 right-2 flex gap-1">
                                 <span className="bg-black/60 backdrop-blur-md border border-white/10 text-white text-xs font-bold px-2 py-1 rounded-lg flex items-center gap-1">
@@ -145,6 +150,17 @@ const ManageMovies = () => {
                                 >
                                     {movie.showOnHome ? <HomeIcon className="w-5 h-5 mb-1" /> : <HomeIcon className="w-5 h-5 mb-1 opacity-50" />}
                                     <span className="text-[10px] font-medium">On Home</span>
+                                </button>
+
+                                <button
+                                    onClick={() => handleToggle(movie._id, 'isHero', movie.isHero)}
+                                    className={`flex flex-col items-center justify-center p-2 rounded-xl border transition-all ${movie.isHero
+                                        ? "bg-amber-500/10 border-amber-500/30 text-amber-400"
+                                        : "bg-white/5 border-white/5 text-gray-400 hover:bg-white/10"
+                                        }`}
+                                >
+                                    {movie.isHero ? <ZapIcon className="w-5 h-5 mb-1" /> : <ZapIcon className="w-5 h-5 mb-1 opacity-50" />}
+                                    <span className="text-[10px] font-medium">Carousel</span>
                                 </button>
                             </div>
                         </div>

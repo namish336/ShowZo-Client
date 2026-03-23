@@ -7,6 +7,7 @@ const apiRoutes = {
     bookings: "/api/bookings",
     payments: "/api/payments",
     dashboard: "/api/dashboard",
+    news: "/api/news",
 };
 
 export default apiRoutes;

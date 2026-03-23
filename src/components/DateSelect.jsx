@@ -4,8 +4,11 @@ import BlurCircle from "./BlurCircle";
 import toast from "react-hot-toast";
 import { useNavigate } from "react-router-dom";
 
+import { useAuth } from "@clerk/clerk-react";
+
 const DateSelect = ({ id }) => {
   const navigate = useNavigate();
+  const { isSignedIn } = useAuth();
   const [selected, setSelected] = useState(null);
   const [dates, setDates] = useState([]);
 
@@ -25,8 +28,11 @@ const DateSelect = ({ id }) => {
 
 
   const onBookHandler = () => {
+    if (!isSignedIn) {
+      return toast.error("Please login to continue");
+    }
     if (!selected) {
-      return toast("Please select a date");
+      return toast.error("Please select a date");
     }
     navigate(`/movies/${id}/${selected}`);
     scrollTo(0, 0);
@@ -34,7 +40,7 @@ const DateSelect = ({ id }) => {
 
   return (
     <div id="dateSelect" className="pt-30">
-      <div className="flex flex-col md:flex-row items-center justify-between gap-10 relative p-8 bg-primary/10 border border-primary/20 rounded-lg">
+      <div className="flex flex-col md:flex-row items-center justify-between gap-10 relative p-8 bg-white/40 backdrop-blur-md border border-white/60 shadow-lg rounded-2xl">
         <BlurCircle top="-100px" left="-100px" />
         <BlurCircle top="100px" right="0" />
         <div>
@@ -46,9 +52,9 @@ const DateSelect = ({ id }) => {
                 <button
                   onClick={() => setSelected(date)}
                   key={date}
-                  className={`flex flex-col items-center justify-center h-14 w-14 aspect-square rounded cursor-pointer ${selected === date
-                      ? "bg-primary text-white"
-                      : "border border-primary/70"
+                  className={`flex flex-col items-center justify-center h-14 w-14 aspect-square rounded cursor-pointer transition-colors font-medium ${selected === date
+                      ? "bg-primary text-white shadow-md border border-primary"
+                      : "border border-white/60 bg-white/30 hover:bg-white/50 text-gray-800"
                     }`}
                 >
                   <span>{new Date(date).getDate()}</span>
@@ -63,7 +69,7 @@ const DateSelect = ({ id }) => {
         </div>
         <button
           onClick={onBookHandler}
-          className="bg-primary text-white px-8 py-2 mt-6 rounded hover:bg-primary/90 transiton-all cursor-pointer"
+          className="bg-primary text-white px-10 py-3 mt-6 rounded-full hover:bg-primary-dull transition-all cursor-pointer font-bold shadow-md"
         >
           Book Now
         </button>

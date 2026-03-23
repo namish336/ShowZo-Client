@@ -16,6 +16,8 @@ import AddShows from './pages/admin/AddShows'
 import ListShows from './pages/admin/ListShows'
 import ManageMovies from './pages/admin/ManageMovies'
 
+import ManageNews from './pages/admin/ManageNews'
+
 import ListBookings from './pages/admin/ListBookings'
 import SearchResults from './pages/SearchResults'
 import Details from './pages/Details'
@@ -32,6 +34,7 @@ import ContactUs from './pages/ContactUs'
 const App = () => {
 
   const isAdminRoute = useLocation().pathname.startsWith("/admin");
+
   return (
     <>
       <Toaster />
@@ -58,6 +61,7 @@ const App = () => {
         <Route path='/admin/*' element={<Layout />}>
           <Route index element={<Dashboard />} />
           <Route path="manage-movies" element={<ManageMovies />} />
+          <Route path="manage-news" element={<ManageNews />} />
           <Route path="add-shows" element={<AddShows />} />
           <Route path="list-shows" element={<ListShows />} />
           <Route path="list-bookings" element={<ListBookings />} />

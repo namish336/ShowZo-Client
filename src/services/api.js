@@ -75,6 +75,16 @@ export const deleteShow = async (id) => {
     }
 };
 
+export const deleteShowtimes = async (ids) => {
+    try {
+        const response = await api.post(`${apiRoutes.showtimes}/bulk-delete`, { ids });
+        return response.data;
+    } catch (error) {
+        console.error("Error deleting shows:", error);
+        return { success: false, message: error.message };
+    }
+};
+
 export const createBooking = async (data, token) => {
     try {
         console.log("Sending booking request with token:", token ? "Token present" : "Token missing");
@@ -274,6 +284,63 @@ export const getDashboardStats = async (token) => {
         return response.data;
     } catch (error) {
         console.error("Error fetching dashboard stats:", error);
+        return { success: false, message: error.message };
+    }
+};
+
+// --- News ---
+export const getNews = async () => {
+    try {
+        const response = await api.get(apiRoutes.news);
+        return response.data.news;
+    } catch (error) {
+        console.error("Error fetching news:", error);
+        return [];
+    }
+};
+
+export const getNewsById = async (id) => {
+    try {
+        const response = await api.get(`${apiRoutes.news}/${id}`);
+        return response.data.news;
+    } catch (error) {
+        console.error("Error fetching news by ID:", error);
+        return null;
+    }
+};
+
+export const createNews = async (data, token) => {
+    try {
+        const response = await api.post(apiRoutes.news, data, {
+            headers: { Authorization: `Bearer ${token}` }
+        });
+        return response.data;
+    } catch (error) {
+        console.error("Error creating news:", error);
+        return { success: false, message: error.message };
+    }
+};
+
+export const updateNews = async (id, data, token) => {
+    try {
+        const response = await api.put(`${apiRoutes.news}/${id}`, data, {
+            headers: { Authorization: `Bearer ${token}` }
+        });
+        return response.data;
+    } catch (error) {
+        console.error("Error updating news:", error);
+        return { success: false, message: error.message };
+    }
+};
+
+export const deleteNews = async (id, token) => {
+    try {
+        const response = await api.delete(`${apiRoutes.news}/${id}`, {
+            headers: { Authorization: `Bearer ${token}` }
+        });
+        return response.data;
+    } catch (error) {
+        console.error("Error deleting news:", error);
         return { success: false, message: error.message };
     }
 };

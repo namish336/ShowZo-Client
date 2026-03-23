@@ -1,26 +1,44 @@
-import React from 'react';
+import React, { useEffect, useState } from 'react';
 import { useParams, Link } from 'react-router-dom';
-import { newsItems } from '../data/newsData';
+import { getNewsById } from '../services/api';
 import { ArrowLeft } from 'lucide-react';
+import Loading from '../components/Loading';
 
 const NewsDetail = () => {
     const { id } = useParams();
-    const newsItem = newsItems.find(item => item.id === parseInt(id));
+    const [newsItem, setNewsItem] = useState(null);
+    const [loading, setLoading] = useState(true);
+
+    useEffect(() => {
+        const fetchNewsDetail = async () => {
+            try {
+                const data = await getNewsById(id);
+                setNewsItem(data);
+            } catch (error) {
+                console.error("Error fetching news detail:", error);
+            } finally {
+                setLoading(false);
+            }
+        };
+        fetchNewsDetail();
+    }, [id]);
+
+    if (loading) return <Loading />;
 
     if (!newsItem) {
         return (
-            <div className="min-h-screen bg-[#1a1a1a] text-white flex items-center justify-center">
+            <div className="min-h-screen bg-[#C0C9DB] text-gray-900 flex items-center justify-center">
                 <div className="text-center">
                     <h2 className="text-2xl font-bold mb-4">News Article Not Found</h2>
-                    <Link to="/news" className="text-red-500 hover:underline">Back to News</Link>
+                    <Link to="/news" className="text-red-600 hover:underline font-medium">Back to News</Link>
                 </div>
             </div>
         );
     }
 
     return (
-        <div className="min-h-screen bg-[#1a1a1a] text-white pt-24 px-6 md:px-16 lg:px-36 pb-12">
-            <Link to="/news" className="inline-flex items-center text-gray-400 hover:text-white mb-8 transition-colors">
+        <div className="min-h-screen bg-[#C0C9DB] text-gray-900 pt-24 px-6 md:px-16 lg:px-36 pb-12">
+            <Link to="/news" className="inline-flex items-center text-gray-700 hover:text-gray-900 font-medium mb-8 transition-colors">
                 <ArrowLeft className="w-5 h-5 mr-2" />
                 Back to News
             </Link>
@@ -34,29 +52,26 @@ const NewsDetail = () => {
                     />
                     <div className="absolute inset-0 bg-gradient-to-t from-black/80 to-transparent"></div>
                     <div className="absolute bottom-6 left-6 md:bottom-10 md:left-10">
-                        <span className="bg-red-600 text-xs font-bold px-3 py-1 rounded-full uppercase tracking-wider mb-3 inline-block">
+                        <span className="bg-red-600 text-[10px] md:text-xs font-bold px-3 py-1 rounded-full uppercase tracking-wider mb-3 inline-block">
                             {newsItem.category}
                         </span>
-                        <h1 className="text-3xl md:text-5xl font-bold leading-tight">
+                        <h1 className="text-2xl md:text-4xl lg:text-5xl font-bold leading-tight text-white">
                             {newsItem.title}
                         </h1>
                     </div>
                 </div>
 
-                <div className="flex items-center text-gray-400 text-sm mb-8 border-b border-gray-800 pb-4">
+                <div className="flex items-center text-gray-700 font-medium text-sm mb-8 border-b border-white/40 pb-4">
                     <span>Published on {newsItem.date}</span>
                 </div>
 
-                <div className="prose prose-invert prose-lg max-w-none">
-                    <p className="text-gray-300 leading-relaxed text-lg">
+                <div className="prose prose-lg max-w-none text-gray-800">
+                    <p className="text-gray-800 font-semibold leading-relaxed text-lg mb-6">
                         {newsItem.description}
                     </p>
-                    <p className="text-gray-300 leading-relaxed text-lg mt-4">
-                        Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
-                    </p>
-                    <p className="text-gray-300 leading-relaxed text-lg mt-4">
-                        Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam, eaque ipsa quae ab illo inventore veritatis et quasi architecto beatae vitae dicta sunt explicabo. Nemo enim ipsam voluptatem quia voluptas sit aspernatur aut odit aut fugit, sed quia consequuntur magni dolores eos qui ratione voluptatem sequi nesciunt.
-                    </p>
+                    <div className="text-gray-700 font-medium leading-relaxed whitespace-pre-wrap">
+                        {newsItem.content}
+                    </div>
                 </div>
 
                 {/* Related/More News Section could go here */}

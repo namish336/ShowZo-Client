@@ -19,6 +19,7 @@ const AdminSidebar = ({ isSidebarOpen, setIsSidebarOpen }) => {
   const adminNavlinks = [
     { name: "Overview", path: "/admin", icon: LayoutDashboardIcon },
     { name: "Manage Movies", path: "/admin/manage-movies", icon: ListIcon },
+    { name: "Manage News", path: "/admin/manage-news", icon: ListCollapseIcon },
     { name: "Add Shows", path: "/admin/add-shows", icon: PlusSquareIcon },
     { name: "List Shows", path: "/admin/list-shows", icon: ListIcon },
     { name: "Bookings", path: "/admin/list-bookings", icon: ListCollapseIcon },

@@ -155,10 +155,10 @@ const BookingPayment = () => {
 
     if (error) {
         return (
-            <div className="flex flex-col items-center justify-center min-h-[60vh] text-white">
+            <div className="flex flex-col items-center justify-center min-h-[60vh] bg-[#C0C9DB] text-gray-900">
                 <h2 className="text-2xl font-bold mb-4">Error</h2>
                 <p>{error}</p>
-                <button onClick={() => navigate("/my-bookings")} className="mt-4 text-primary hover:underline">
+                <button onClick={() => navigate("/my-bookings")} className="mt-4 text-primary font-bold hover:underline">
                     Back to My Bookings
                 </button>
             </div>
@@ -166,13 +166,13 @@ const BookingPayment = () => {
     }
 
     return (
-        <div className="min-h-screen pt-24 px-6 md:px-16 lg:px-40 pb-10">
+        <div className="min-h-screen bg-[#C0C9DB] text-gray-900 pt-24 px-6 md:px-16 lg:px-40 pb-10">
             <h1 className="text-3xl font-bold mb-8 text-center">Complete Your Payment</h1>
 
             {booking && (
-                <div className="max-w-md mx-auto mb-8 p-4 bg-gray-800/50 rounded-lg text-center border border-gray-700">
-                    <p className="text-gray-400 text-sm">Booking for</p>
-                    <p className="text-xl font-semibold mb-2">{booking.showtime?.movie?.title}</p>
+                <div className="max-w-md mx-auto mb-8 p-6 bg-white/50 backdrop-blur-md rounded-2xl text-center border border-white/40 shadow-sm">
+                    <p className="text-gray-600 font-bold text-sm mb-1">Booking for</p>
+                    <p className="text-xl font-bold mb-2">{booking.showtime?.movie?.title}</p>
                     <p className="text-2xl font-bold text-primary">
                         {import.meta.env.VITE_CURRENCY}{booking.amount}
                     </p>

@@ -118,9 +118,9 @@ const SeatLayout = () => {
               key={seatId}
               onClick={() => handleSeatClick(seatId)}
               disabled={occupiedSeats.includes(seatId)}
-              className={`h-8 w-8 rounded border border-primary/60 cursor-pointer flex items-center justify-center 
-                ${selectedSeats.includes(seatId) ? "bg-primary text-white" : ""}
-                ${occupiedSeats.includes(seatId) ? "bg-gray-600/50 cursor-not-allowed border-gray-600 text-gray-400" : ""}
+              className={`h-8 w-8 rounded border border-primary/60 cursor-pointer flex items-center justify-center font-bold bg-white/40 hover:bg-white/80 shadow-sm 
+                ${selectedSeats.includes(seatId) ? "bg-primary text-white border-primary shadow-lg" : ""}
+                ${occupiedSeats.includes(seatId) ? "bg-gray-400/50 cursor-not-allowed border-gray-400 text-gray-700" : ""}
                 `}
             >
               {occupiedSeats.includes(seatId) ? "X" : seatId}
@@ -134,10 +134,10 @@ const SeatLayout = () => {
   const filteredShowtimes = showtimes.filter(item => item.theater && item.theater._id === selectedTheater);
 
   return show ? (
-    <div className="flex flex-col md:flex-row px-6 md:px-16 lg:px-40 py-30 md:pt-50">
+    <div className="flex flex-col md:flex-row px-6 md:px-16 lg:px-40 py-30 md:pt-50 bg-[#C0C9DB] text-gray-900 min-h-screen relative">
       {/* Available Timings */}
-      <div className="w-60 bg-primary/10 border border-primary/20 rounded-lg py-6 h-max md:sticky md:top-30">
-        <p className="text-lg font-semibold px-6 mb-4">Select Theater</p>
+      <div className="w-60 bg-white/50 backdrop-blur-md shadow-sm border border-white/40 rounded-lg py-6 h-max md:sticky md:top-30">
+        <p className="text-lg font-bold px-6 mb-4">Select Theater</p>
 
         {/* Theater List */}
         <div className="px-6 mb-6 flex flex-col gap-2">
@@ -150,21 +150,21 @@ const SeatLayout = () => {
                 setSelectedSeats([]); // Reset seats
               }}
               className={`text-left text-sm py-2 px-3 rounded-md transition-colors ${selectedTheater === theater._id
-                ? "bg-primary text-white"
-                : "text-gray-400 hover:bg-white/5 hover:text-white"
+                ? "bg-primary text-white font-bold shadow-md"
+                : "text-gray-600 font-medium hover:bg-white/50 hover:text-gray-900"
                 }`}
             >
               <div>
                 <p className="font-semibold">{theater.name}</p>
-                <p className="text-xs opacity-70 truncate">{theater.location}</p>
+                <p className="text-xs opacity-70 truncate text-gray-700">{theater.location}</p>
               </div>
             </button>
           ))}
         </div>
 
-        <div className="h-px bg-primary/20 mx-6 mb-6"></div>
+        <div className="h-px bg-white/60 mx-6 mb-6"></div>
 
-        <p className="text-sm font-semibold px-6 text-gray-400 mb-3">Available Timings</p>
+        <p className="text-sm font-bold px-6 text-gray-700 mb-3">Available Timings</p>
         <div className="space-y-1">
           {filteredShowtimes.length > 0 ? (
             filteredShowtimes.map((item) => {
@@ -177,8 +177,8 @@ const SeatLayout = () => {
                     setSelectedSeats([]);
                   }}
                   className={`flex items-center gap-2 px-6 py-2 w-max rounded-r-md cursor-pointer transition ${selectedTime === item._id
-                    ? "text-primary font-bold border-l-2 border-primary bg-primary/5"
-                    : "text-gray-300 hover:text-white hover:bg-white/5"
+                    ? "text-primary font-bold border-l-4 border-primary bg-white/80 shadow-sm"
+                    : "text-gray-700 font-medium hover:text-gray-900 hover:bg-white/50"
                     }`}
                 >
                   <ClockIcon className="w-4 h-4" />
@@ -187,7 +187,7 @@ const SeatLayout = () => {
               );
             })
           ) : (
-            <p className="px-6 text-xs text-gray-500 italic">No shows available for this theater.</p>
+            <p className="px-6 text-xs text-gray-600 font-medium italic">No shows available for this theater.</p>
           )}
         </div>
       </div>
@@ -197,8 +197,8 @@ const SeatLayout = () => {
         <BlurCircle bottom="0" right="0" />
         <h1 className="text-2xl font-semibold mb-4">Select your seat</h1>
         <img src={assets.screenImage} alt="screen" />
-        <p className="text-gray-400 text-sm mb-6">SCREEN SIDE</p>
-        <div className="flex flex-col items-center mt-10 text-xs text-gray-300">
+        <p className="text-gray-600 font-bold text-sm mb-6">SCREEN SIDE</p>
+        <div className="flex flex-col items-center mt-10 text-xs text-gray-900">
           <div className="grid grid-cols-2 md:grid-cols-1 gap-8 md:gap-2 mb-6">
             {groupRows[0].map((row) => renderSeats(row))}
           </div>

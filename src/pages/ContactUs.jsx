@@ -19,15 +19,15 @@ const ContactUs = () => {
     };
 
     return (
-        <div className="min-h-screen bg-black text-white pt-20 px-6 md:px-16 lg:px-36">
+        <div className="min-h-screen bg-[#C0C9DB] text-gray-900 pt-32 px-6 md:px-16 lg:px-36 pb-20">
             <div className="max-w-4xl mx-auto">
-                <h1 className="text-4xl md:text-5xl font-bold mb-8 text-center bg-gradient-to-r from-purple-500 to-pink-500 bg-clip-text text-transparent">Contact Us</h1>
+                <h1 className="text-4xl md:text-5xl font-bold mb-8 text-center text-gray-900">Contact Us</h1>
 
                 <div className="grid md:grid-cols-2 gap-12">
                     {/* Contact Information */}
-                    <div className="bg-gray-900/50 backdrop-blur-sm rounded-xl p-8 border border-gray-800 shadow-xl h-fit">
-                        <h2 className="text-2xl font-semibold mb-6">Get in Touch</h2>
-                        <div className="space-y-6 text-gray-300">
+                    <div className="bg-white/50 backdrop-blur-md rounded-2xl p-8 border border-white/40 shadow-sm h-fit">
+                        <h2 className="text-2xl font-bold mb-6">Get in Touch</h2>
+                        <div className="space-y-6 text-gray-800 font-medium">
                             <div className="flex items-start gap-4">
                                 <span className="text-2xl">📍</span>
                                 <p>123 Cinema Street, Movie City, MC 40001, India</p>
@@ -43,21 +43,21 @@ const ContactUs = () => {
                         </div>
 
                         <div className="mt-8">
-                            <h3 className="text-lg font-semibold mb-4">Follow Us</h3>
+                            <h3 className="text-lg font-bold mb-4">Follow Us</h3>
                             <div className="flex gap-4">
-                                <a href="#" className="w-10 h-10 rounded-full bg-gray-800 flex items-center justify-center hover:bg-purple-600 transition-colors">Twitter</a>
-                                <a href="#" className="w-10 h-10 rounded-full bg-gray-800 flex items-center justify-center hover:bg-pink-600 transition-colors">Insta</a>
-                                <a href="#" className="w-10 h-10 rounded-full bg-gray-800 flex items-center justify-center hover:bg-blue-600 transition-colors">FB</a>
+                                <a href="#" className="w-10 h-10 rounded-full bg-white/80 border border-white shadow-sm flex items-center justify-center hover:bg-white transition-colors">Twitter</a>
+                                <a href="#" className="w-10 h-10 rounded-full bg-white/80 border border-white shadow-sm flex items-center justify-center hover:bg-white transition-colors">Insta</a>
+                                <a href="#" className="w-10 h-10 rounded-full bg-white/80 border border-white shadow-sm flex items-center justify-center hover:bg-white transition-colors">FB</a>
                             </div>
                         </div>
                     </div>
 
                     {/* Contact Form */}
-                    <div className="bg-gray-900/50 backdrop-blur-sm rounded-xl p-8 border border-gray-800 shadow-xl">
-                        <h2 className="text-2xl font-semibold mb-6">Send a Message</h2>
+                    <div className="bg-white/50 backdrop-blur-md rounded-2xl p-8 border border-white/40 shadow-sm">
+                        <h2 className="text-2xl font-bold mb-6">Send a Message</h2>
                         <form onSubmit={handleSubmit} className="space-y-4">
                             <div>
-                                <label htmlFor="name" className="block text-sm text-gray-400 mb-1">Name</label>
+                                <label htmlFor="name" className="block text-sm text-gray-800 font-bold mb-1">Name</label>
                                 <input
                                     type="text"
                                     id="name"
@@ -65,12 +65,12 @@ const ContactUs = () => {
                                     value={formData.name}
                                     onChange={handleChange}
                                     required
-                                    className="w-full bg-gray-800 border border-gray-700 rounded-lg p-3 text-white focus:outline-none focus:border-purple-500 transition-colors"
+                                    className="w-full bg-white/60 border border-white/50 rounded-lg p-3 text-gray-900 focus:outline-none focus:border-primary placeholder-gray-500 font-medium shadow-inner transition-colors"
                                     placeholder="Your Name"
                                 />
                             </div>
                             <div>
-                                <label htmlFor="email" className="block text-sm text-gray-400 mb-1">Email</label>
+                                <label htmlFor="email" className="block text-sm text-gray-800 font-bold mb-1">Email</label>
                                 <input
                                     type="email"
                                     id="email"
@@ -78,12 +78,12 @@ const ContactUs = () => {
                                     value={formData.email}
                                     onChange={handleChange}
                                     required
-                                    className="w-full bg-gray-800 border border-gray-700 rounded-lg p-3 text-white focus:outline-none focus:border-purple-500 transition-colors"
+                                    className="w-full bg-white/60 border border-white/50 rounded-lg p-3 text-gray-900 focus:outline-none focus:border-primary placeholder-gray-500 font-medium shadow-inner transition-colors"
                                     placeholder="your@email.com"
                                 />
                             </div>
                             <div>
-                                <label htmlFor="message" className="block text-sm text-gray-400 mb-1">Message</label>
+                                <label htmlFor="message" className="block text-sm text-gray-800 font-bold mb-1">Message</label>
                                 <textarea
                                     id="message"
                                     name="message"
@@ -91,13 +91,13 @@ const ContactUs = () => {
                                     value={formData.message}
                                     onChange={handleChange}
                                     required
-                                    className="w-full bg-gray-800 border border-gray-700 rounded-lg p-3 text-white focus:outline-none focus:border-purple-500 transition-colors"
+                                    className="w-full bg-white/60 border border-white/50 rounded-lg p-3 text-gray-900 focus:outline-none focus:border-primary placeholder-gray-500 font-medium shadow-inner transition-colors"
                                     placeholder="How can we help?"
                                 ></textarea>
                             </div>
                             <button
                                 type="submit"
-                                className="w-full bg-gradient-to-r from-purple-600 to-pink-600 text-white font-semibold py-3 rounded-lg hover:opacity-90 transition-opacity"
+                                className="w-full bg-primary text-white font-bold py-3 pt-3.5 rounded-lg hover:bg-primary-dull transition-colors shadow-md"
                             >
                                 Send Message
                             </button>

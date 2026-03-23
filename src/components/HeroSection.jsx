@@ -21,7 +21,7 @@ import AddToCollectionModal from "./AddToCollectionModal";
 
 const HeroSection = () => {
   const navigate = useNavigate();
-  const { getToken } = useAuth();
+  const { isSignedIn } = useAuth();
   const [movies, setMovies] = useState([]);
   const [loading, setLoading] = useState(true);
   const [isCollectionModalOpen, setIsCollectionModalOpen] = useState(false);
@@ -57,8 +57,8 @@ const HeroSection = () => {
   }, []);
 
   const openCollectionModal = (movieId) => {
-    if (!getToken) {
-      toast.error("Please login first");
+    if (!isSignedIn) {
+      toast.error("Please login to continue");
       return;
     }
     setSelectedMovieId(movieId);

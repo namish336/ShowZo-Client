@@ -8,7 +8,7 @@ const WatchGuide = () => {
 
   return (
   
-    <div className="min-h-screen bg-gray-900 text-white px-6 py-10 mt-[60px]">
+    <div className="min-h-screen bg-[#C0C9DB] text-gray-900 px-6 pt-24 pb-12">
       <h1 className="text-4xl font-bold mb-8 text-center">
         🎬 Franchise Watch Guide
       </h1>
@@ -19,7 +19,7 @@ const WatchGuide = () => {
         {franchises.map((franchise) => (
           <div
             key={franchise.id}
-            className="bg-gray-800 rounded-xl overflow-hidden shadow-lg hover:scale-105 transition transform duration-300 cursor-pointer"
+            className="bg-white/50 backdrop-blur-md border border-white/40 rounded-2xl overflow-hidden shadow-sm hover:shadow-xl hover:scale-[1.02] transition transform duration-300 cursor-pointer"
             onClick={() => setSelectedFranchise(franchise)}
           >
             <img
@@ -29,10 +29,10 @@ const WatchGuide = () => {
             />
             <div className="p-4">
               <h2 className="text-xl font-semibold">{franchise.name}</h2>
-              <p className="text-sm text-gray-400 mt-2">
+              <p className="text-sm text-gray-700 font-medium mt-2">
                 {franchise.description}
               </p>
-              <button className="mt-4 w-full bg-red-600 hover:bg-red-700 py-2 rounded-lg text-sm font-semibold">
+              <button className="mt-4 w-full bg-red-600 text-white hover:bg-red-700 py-2 rounded-xl text-sm font-bold shadow-md shadow-red-500/20 transition-colors">
                 View Watch Order
               </button>
             </div>
@@ -42,11 +42,11 @@ const WatchGuide = () => {
 
       {/* Modal */}
       {selectedFranchise && (
-        <div className="fixed inset-0 bg-black bg-opacity-70 flex items-center justify-center z-50">
-          <div className="bg-gray-800 rounded-xl w-[90%] md:w-[600px] max-h-[80vh] overflow-y-auto p-6 relative">
+        <div className="fixed inset-0 bg-black/40 backdrop-blur-sm flex items-center justify-center z-50">
+          <div className="bg-white/95 text-gray-900 border border-white/50 shadow-2xl rounded-2xl w-[90%] md:w-[600px] max-h-[80vh] overflow-y-auto p-8 relative">
             <button
               onClick={() => setSelectedFranchise(null)}
-              className="absolute top-3 right-3 text-gray-400 hover:text-white text-xl"
+              className="absolute top-4 right-4 text-gray-500 hover:text-gray-900 text-2xl"
             >
               ✕
             </button>
@@ -59,18 +59,12 @@ const WatchGuide = () => {
               {selectedFranchise.watchOrder.map((item, index) => (
                 <li
                   key={index}
-                  className="bg-gray-700 px-4 py-2 rounded-lg"
+                  className="bg-[#C0C9DB]/40 border border-[#C0C9DB] px-4 py-3 rounded-xl font-medium shadow-sm"
                 >
                   {item}
                 </li>
               ))}
             </ol>
-
-            <button
-              className="mt-6 w-full bg-green-600 hover:bg-green-700 py-2 rounded-lg font-semibold"
-            >
-              🎟 Book Tickets
-            </button>
           </div>
         </div>
       )}

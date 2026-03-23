@@ -4,6 +4,11 @@ import googlePlay from './googlePlay.svg'
 import appStore from './appStore.svg'
 import screenImage from './screenImage.svg'
 import profile from './profile.png'
+import member1 from './member1.jpeg'
+import member2 from './member2.jpeg'
+import member3 from './member3.jpeg'
+import guide from './guide.png'
+
 
 export const assets = {
     logo,
@@ -11,7 +16,12 @@ export const assets = {
     googlePlay,
     appStore,
     screenImage,
-    profile
+    profile,
+    member1,
+    member2,
+    member3,
+    guide
+
 
 }
 

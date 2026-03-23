@@ -70,11 +70,11 @@ const AddToCollectionModal = ({ isOpen, onClose, movieId }) => {
     if (!isOpen) return null;
 
     return (
-        <div className="fixed inset-0 z-50 flex items-center justify-center bg-black/70 backdrop-blur-sm p-4">
-            <div className="bg-[#18181B] border border-white/10 p-6 rounded-2xl w-full max-w-sm relative animate-fade-in-up">
+        <div className="fixed inset-0 z-50 flex items-center justify-center bg-black/40 backdrop-blur-sm p-4">
+            <div className="bg-white/95 text-gray-900 border border-white/50 shadow-2xl p-6 rounded-2xl w-full max-w-sm relative animate-fade-in-up">
                 <button
                     onClick={onClose}
-                    className="absolute top-4 right-4 text-gray-400 hover:text-white transition"
+                    className="absolute top-4 right-4 text-gray-500 hover:text-gray-900 transition"
                 >
                     <XIcon className="w-5 h-5" />
                 </button>
@@ -94,10 +94,10 @@ const AddToCollectionModal = ({ isOpen, onClose, movieId }) => {
                                     key={col._id}
                                     disabled={isAlreadyIn}
                                     onClick={() => handleAddToCollection(col._id)}
-                                    className="w-full text-left px-4 py-3 rounded-lg bg-[#27272A] hover:bg-[#3F3F46] transition flex items-center justify-between disabled:opacity-50 disabled:cursor-not-allowed"
+                                    className="w-full text-left px-4 py-3 rounded-xl bg-[#C0C9DB]/30 border border-[#C0C9DB]/50 hover:bg-[#C0C9DB]/50 transition flex items-center justify-between disabled:opacity-50 disabled:cursor-not-allowed group"
                                 >
-                                    <span className="font-medium text-sm">{col.name}</span>
-                                    {isAlreadyIn && <CheckIcon className="w-4 h-4 text-green-500" />}
+                                    <span className="font-semibold text-sm group-disabled:text-gray-500">{col.name}</span>
+                                    {isAlreadyIn && <CheckIcon className="w-4 h-4 text-green-600" />}
                                 </button>
                             );
                         })}
@@ -108,12 +108,12 @@ const AddToCollectionModal = ({ isOpen, onClose, movieId }) => {
                 )}
 
                 {/* Create New Section */}
-                <div className="mt-4 pt-4 border-t border-gray-700">
+                <div className="mt-4 pt-4 border-t border-gray-200">
                     {isCreating ? (
                         <div className="flex items-center gap-2">
                             <input
                                 type="text"
-                                className="flex-1 bg-[#09090B] border border-gray-700 rounded-lg px-3 py-2 text-sm text-white focus:border-primary outline-none transition"
+                                className="flex-1 bg-white border border-gray-300 rounded-lg px-3 py-2 text-sm text-gray-900 focus:border-[#C0C9DB] outline-none transition"
                                 placeholder="Collection Name"
                                 value={newCollectionName}
                                 onChange={(e) => setNewCollectionName(e.target.value)}
@@ -122,21 +122,21 @@ const AddToCollectionModal = ({ isOpen, onClose, movieId }) => {
                             <button
                                 onClick={handleCreateAndAdd}
                                 disabled={!newCollectionName.trim()}
-                                className="p-2 bg-primary rounded-lg hover:bg-primary-dull transition disabled:opacity-50"
+                                className="p-2 bg-[#e50914] rounded-lg hover:bg-[#b20710] transition disabled:opacity-50"
                             >
                                 <PlusIcon className="w-4 h-4 text-white" />
                             </button>
                             <button
                                 onClick={() => setIsCreating(false)}
-                                className="p-2 bg-gray-700 rounded-lg hover:bg-gray-600 transition"
+                                className="p-2 bg-gray-200 rounded-lg hover:bg-gray-300 transition text-gray-600"
                             >
-                                <XIcon className="w-4 h-4 text-white" />
+                                <XIcon className="w-4 h-4" />
                             </button>
                         </div>
                     ) : (
                         <button
                             onClick={() => setIsCreating(true)}
-                            className="w-full py-2.5 flex items-center justify-center gap-2 rounded-lg border border-dashed border-gray-600 text-gray-400 hover:text-white hover:border-gray-400 hover:bg-white/5 transition text-sm"
+                            className="w-full py-2.5 flex items-center justify-center gap-2 rounded-xl border border-dashed border-gray-400 text-gray-500 hover:text-gray-900 hover:border-gray-600 hover:bg-[#C0C9DB]/20 transition text-sm font-medium"
                         >
                             <PlusIcon className="w-4 h-4" />
                             Create New Collection
