@@ -42,14 +42,7 @@ const ContactUs = () => {
                             </div>
                         </div>
 
-                        <div className="mt-8">
-                            <h3 className="text-lg font-bold mb-4">Follow Us</h3>
-                            <div className="flex gap-4">
-                                <a href="#" className="w-10 h-10 rounded-full bg-white/80 border border-white shadow-sm flex items-center justify-center hover:bg-white transition-colors">Twitter</a>
-                                <a href="#" className="w-10 h-10 rounded-full bg-white/80 border border-white shadow-sm flex items-center justify-center hover:bg-white transition-colors">Insta</a>
-                                <a href="#" className="w-10 h-10 rounded-full bg-white/80 border border-white shadow-sm flex items-center justify-center hover:bg-white transition-colors">FB</a>
-                            </div>
-                        </div>
+                       
                     </div>
 
                     {/* Contact Form */}

@@ -121,7 +121,7 @@ const HomeMainContent = () => {
   };
 
   return (
-    <div className="flex-none lg:flex-1 w-full lg:w-auto h-auto lg:h-full flex flex-col p-4 md:p-6 lg:overflow-y-auto no-scrollbar max-w-full overflow-x-hidden">
+    <div className="flex-none lg:flex-1 w-full lg:w-auto h-auto flex flex-col p-4 md:p-6 no-scrollbar max-w-full overflow-x-hidden">
 
       {/* Hero Section Container */}
       <div className="flex flex-col lg:flex-row gap-6 mb-8 shrink-0">

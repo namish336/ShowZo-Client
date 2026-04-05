@@ -45,7 +45,7 @@ const HomeSidebar = () => {
   }, []);
 
   return (
-    <div className="w-full lg:w-[320px] h-auto lg:h-full flex flex-col gap-6 p-4 md:p-6 overflow-visible lg:overflow-y-auto no-scrollbar border-t lg:border-t-0 lg:border-r border-white/40 bg-white/40 lg:bg-transparent backdrop-blur-md text-gray-900 relative z-10 shadow-xl lg:shadow-none shrink-0 lg:shrink mt-6 lg:mt-0">
+    <div className="w-full lg:w-[320px] h-auto flex flex-col gap-6 p-4 md:p-6 no-scrollbar border-t lg:border-t-0 lg:border-l border-white/40 bg-white/40 lg:bg-transparent backdrop-blur-md text-gray-900 relative z-10 shadow-xl lg:shadow-none shrink-0 mt-6 lg:mt-0">
 
       {/* New Trailer Section */}
       <div className="bg-[#C0C9DB]/60 backdrop-blur-md border border-white/50 rounded-3xl p-5 flex flex-col gap-4 shadow-lg shadow-black/5">

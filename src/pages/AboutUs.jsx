@@ -15,7 +15,7 @@ const AboutUs = () => {
                         to discover movies, check showtimes, and book tickets with ease.
                     </p>
                     <p className="text-lg text-gray-800 font-medium leading-relaxed">
-                        Founded in 2024, ShowZo caters to movie enthusiasts who value convenience and speed.
+                        Founded in 2026, ShowZo caters to movie enthusiasts who value convenience and speed.
                         Whether you're looking for the latest blockbusters or indie gems, we've got you covered with
                         comprehensive listings from top theaters in your city.
                     </p>

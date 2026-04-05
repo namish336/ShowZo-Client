@@ -7,14 +7,14 @@ import { getImageUrl } from '../lib/imageUtils'
 const MovieCard = ({ movie, showBuyTickets = true, basePath = "/movies/" }) => {
   const navigate = useNavigate()
   return (
-    <div className="flex flex-col justify-between p-3 bg-white/60 backdrop-blur-sm border border-white/50 shadow-sm text-gray-900 rounded-2xl hover:-translate-y-2 hover:shadow-xl hover:border-white/80 transition-all duration-300 w-68 group">
+    <div className="flex flex-col justify-between p-3 bg-white/60 backdrop-blur-sm border border-white/50 shadow-sm text-gray-900 rounded-2xl hover:-translate-y-2 hover:shadow-xl hover:border-white/80 transition-all duration-300 w-full max-w-[300px] sm:max-w-none group">
       <img onClick={() => {
         navigate(`${basePath}${movie._id}`);
         scrollTo(0, 0);
       }}
         src={getImageUrl(movie.poster_path)}
         alt=""
-        className="rounded-lg h-96 w-full object-cover object-center cursor-pointer" />
+        className="rounded-lg aspect-[2/3] w-full object-cover object-center cursor-pointer" />
       <p className="font-semibold mt-2 truncate">{movie.title}</p>
       <p className="text-sm text-gray-600 mt-2 font-medium">
         {new Date(movie.release_date).getFullYear()} • {movie.genres.slice(0, 2).map(genre => genre.name).join(" | ")} • {timeFormat(movie.runtime)}

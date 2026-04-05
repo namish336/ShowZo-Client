@@ -9,18 +9,16 @@ const Footer = () => {
           <img className="w-36 h-auto" src={assets.logo} alt="logo" />
           <p className="mt-6 text-sm leading-relaxed">
             ShowZo website is an online platform that is designed to make your movie experience seamless and enjoyable.
-             Whether you're looking to book tickets, explore trending films, or discover old ones, create collections, we’ve got you covered.
+            Whether you're looking to book tickets, explore trending films, or discover old ones, create collections, we’ve got you covered.
           </p>
         </div>
         <div className="flex-1 flex items-start md:justify-end gap-20 md:gap-40">
           <div>
-            <h2 className="font-bold text-gray-200 mb-5 uppercase tracking-wider text-sm">SAN Corporation</h2>
+            <h2 className="font-bold text-gray-200 mb-5 uppercase tracking-wider text-sm">NAS Corporation</h2>
             <ul className="text-sm space-y-3">
+
               <li>
-                <a href="#" className="hover:text-white transition-colors">Home</a>
-              </li>
-              <li>
-                <Link to="/about" className="hover:text-white transition-colors">About us</Link>
+                <Link to="/about" className="hover:text-white transition-colors">About </Link>
               </li>
               <li>
                 <Link to="/contact" className="hover:text-white transition-colors">Contact us</Link>
