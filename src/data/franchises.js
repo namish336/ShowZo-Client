@@ -200,7 +200,7 @@ export const franchises = [
     id: 10,
     name: "Fast & Furious",
     image: "https://beam-images.warnermediacdn.com/BEAM_LWM_DELIVERABLES/87dba8e5-aade-4d6b-af2b-917471ba6b43/4a88f265-a6e4-45a5-92ff-7d6617d1920b?host=wbd-images.prod-vod.h264.io&partner=beamcom",
-    description: "High-octane action and family valhttps://images.unsplash.com/photo-1620070434475-430263435c2b?q=80&w=2070&auto=format&fit=croues.",
+    description: "High-octane action and family focused",
     watchOrder: [
       "The Fast and the Furious",
       "2 Fast 2 Furious",

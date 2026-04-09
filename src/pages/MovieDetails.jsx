@@ -166,22 +166,32 @@ const MovieDetails = () => {
           <DateSelect id={id} />
         </div>
 
-        <p className="text-xl font-bold mt-24 mb-8 text-gray-900">You May Also Like</p>
-        <div className="flex flex-wrap max-sm:justify-center gap-8">
-          {relatedMovies.slice(0, 5).map((movie, index) => (
-            <MovieCard key={index} movie={movie} />
-          ))}
-        </div>
-        <div className="flex justify-center mt-20">
-          <button
-            onClick={() => {
-              navigate("/movies");
-              scrollTo(0, 0);
-            }}
-            className="px-10 py-3 text-sm bg-primary text-white hover:bg-primary-dull transition rounded-full font-bold cursor-pointer shadow-md">
-            Show more
-          </button>
-        </div>
+        <p className="text-xl font-bold mt-24 mb-8 text-gray-900">
+  You May Also Like
+</p>
+
+<div className="flex flex-wrap justify-center gap-8">
+  {relatedMovies.slice(0, 4).map((movie, index) => (
+    <div
+      key={index}
+      className="w-full sm:w-[45%] md:w-[30%] lg:w-[22%]"
+    >
+      <MovieCard movie={movie} />
+    </div>
+  ))}
+</div>
+
+<div className="flex justify-center mt-20">
+  <button
+    onClick={() => {
+      navigate("/movies");
+      scrollTo(0, 0);
+    }}
+    className="px-10 py-3 text-sm bg-primary text-white hover:bg-primary-dull transition rounded-full font-bold cursor-pointer shadow-md"
+  >
+    Show more
+  </button>
+</div>
       </div>
 
       <AddToCollectionModal
